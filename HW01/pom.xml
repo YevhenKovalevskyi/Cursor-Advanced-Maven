@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>education.cursor</groupId>
-        <artifactId>HW_Kovalevskyi_Maven</artifactId>
+        <groupId>edu.cursor</groupId>
+        <artifactId>hw-kovalevskyi-maven</artifactId>
         <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -54,5 +54,19 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
+
+        <!-- #databases -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+	<dependency>
+	    <groupId>com.oracle.database.jdbc</groupId>
+	    <artifactId>ojdbc8</artifactId>
+	</dependency>
     </dependencies>
 </project>
