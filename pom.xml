@@ -89,5 +89,6 @@
 
     <modules>
         <module>HW01</module>
+        <module>HW02</module>
     </modules>
 </project>
