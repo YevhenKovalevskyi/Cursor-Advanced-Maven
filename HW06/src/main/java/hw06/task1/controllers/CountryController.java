@@ -37,7 +37,7 @@ public class CountryController {
     @PostMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Country update(@PathVariable Integer id, @RequestBody Country country) {
-        return countryService.save(country);
+        return countryService.save(id, country);
     }
     
     /**
