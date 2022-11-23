@@ -2,6 +2,7 @@ package hw05.task1.services;
 
 import hw05.task1.entities.Employee;
 import hw05.task1.entities.Shop;
+import hw05.task1.exceptions.DataNotFoundException;
 import hw05.task1.exceptions.ShopNotFoundException;
 import hw05.task1.mappers.ShopMapper;
 import hw05.task1.messages.Messages;
@@ -43,17 +44,24 @@ public class ShopService {
     public Shop save(Integer id, Shop newShop) {
         Shop currShop = checkFound(id, shopRepository.findById(id));
         newShop = ShopMapper.getForUpdate(id, currShop, newShop);
-        
+
         return shopRepository.save(newShop);
     }
-    
+
     public void deleteById(Integer id) {
         checkFound(id, shopRepository.findById(id));
         shopRepository.deleteById(id);
     }
     
     public List<Shop> findAll() {
-        return (List<Shop>) shopRepository.findAll();
+        List<Shop> shops = (List<Shop>) shopRepository.findAll();
+    
+        if (shops.isEmpty()) {
+            log.error(Messages.DATA_NOT_FOUND.getLogMessage());
+            throw new DataNotFoundException(Messages.DATA_NOT_FOUND.getOutMessage());
+        }
+    
+        return shops;
     }
     
     public Shop findById(Integer id) {
@@ -61,8 +69,6 @@ public class ShopService {
     }
     
     public List<Employee> findEmployees(Integer id) {
-        Shop currShop = checkFound(id, shopRepository.findById(id));
-        
-        return currShop.getEmployees();
+        return checkFound(id, shopRepository.findById(id)).getEmployees();
     }
 }
