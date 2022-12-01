@@ -20,6 +20,8 @@
         <lombok.version>1.18.24</lombok.version>
         <junit.version>5.9.1</junit.version>
         <assertj.version>3.23.1</assertj.version>
+        <mockito.version>4.9.0</mockito.version>
+        <jacoco.version>0.8.8</jacoco.version>
         <slf4j.version>2.0.3</slf4j.version>
         <logback.version>1.4.4</logback.version>
         <mysql.version>8.0.31</mysql.version>
@@ -47,5 +49,8 @@
         <module>HW08</module>
         <module>HW09</module>
         <module>HW10</module>
+        <module>HW11</module>
+        <module>HW12</module>
+        <module>HW13</module>
     </modules>
 </project>
