@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -33,11 +34,11 @@ public class ProductServiceImpl implements ProductService {
         });
     }
     
-    public Product save(Product newProduct) {
+    public Product create(Product newProduct) {
         return productRepository.save(Product.build(newProduct));
     }
     
-    public Product save(Integer id, Product newProduct) {
+    public Product update(Integer id, Product newProduct) {
         Product currProduct = findByIdIfExists(id);
         newProduct = ProductMapper.getForUpdate(id, currProduct, newProduct);
         
@@ -61,7 +62,7 @@ public class ProductServiceImpl implements ProductService {
         return (List<Product>) productRepository.findByUseBeforeLessThan(useBefore);
     }
     
-    public List<Product> findByMinPrice(int price) {
+    public List<Product> findByMinPrice(BigDecimal price) {
         return (List<Product>) productRepository.findByPriceGreaterThan(price);
     }
     
