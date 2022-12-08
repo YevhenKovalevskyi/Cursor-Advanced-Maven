@@ -132,6 +132,7 @@
                 <exclude>**/dto/*</exclude>
                 <exclude>**/exceptions/*</exclude>
                 <exclude>**/messages/*</exclude>
+                <exclude>**/Main.class</exclude>
             </excludes>
         </configuration>
     </plugin>
