@@ -68,6 +68,13 @@
             <version>${logback.version}</version>
         </dependency>
 
+        <!-- #utils -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>${annotation.version}</version>
+        </dependency>
+
         <!-- #spring -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -83,11 +90,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
             <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-            <version>${annotation.version}</version>
         </dependency>
     </dependencies>
 </project>
