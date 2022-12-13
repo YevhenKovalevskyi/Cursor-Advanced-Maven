@@ -1,24 +1,15 @@
 package hw09.task1.dto;
 
-import hw09.task1.entities.Teacher;
-
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author YevhenKovalevskyi
  */
+@NoArgsConstructor
 @Data
-@Builder
 public class TeacherDto {
     
     private Integer id;
     private String name;
-    
-    public static TeacherDto build(Teacher teacher) {
-        return TeacherDto.builder()
-                .id(teacher.getId())
-                .name(teacher.getName())
-                .build();
-    }
 }
